@@ -1,3 +1,8 @@
+'''
+    Find the first unique character in the string and return the character.
+    input: leetcode
+    output: l
+'''
 def first_unique_letter(word):
     letter_count = {}
     for letter in word:
@@ -12,4 +17,4 @@ def first_unique_letter(word):
     return ""
 
 # Example
-print(first_unique_letter("aabb"))
+print(first_unique_letter("aabbccddeeffgghhiijjkkllmmnnooppqqrrstuvwxyz"))
