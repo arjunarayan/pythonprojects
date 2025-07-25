@@ -1,15 +1,22 @@
+"""
+    Find the character with most frequency and return character
+"""
+
+
 def most_frequent_letter(inputString):
-    count = {}
+    letterCount = {} # Initializing empty dictionary to count each letter
+
+
     for letter in inputString:
-        if letter in count:
-            count[letter] += 1
+        if letter in letterCount:
+            letterCount[letter] += 1
         else:
-            count[letter] = 1
+            letterCount[letter] = 1
     maxCount = 0
     result = ""
     for letter in inputString:
-        if count[letter] > maxCount:
-            maxCount = count[letter]
+        if letterCount[letter] > maxCount:
+            maxCount = letterCount[letter]
             result = letter
     return result
 
