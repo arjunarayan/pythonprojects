@@ -156,30 +156,28 @@ def checkifwon():
 def b_click(b):
     global clicked, count
 
-    if b["text"] == " " and clicked == True:
-        b["text"] = "X"
-        clicked = False
-        count += 1
-        checkifwon()
-    elif b["text"] == " " and clicked == False:
-        b["text"] = "O"
-        clicked = True
-        count += 1
-        checkifwon()
-    else:
-        messagebox.showerror("Tic Tac Toe", "క్షమించండి! ఇప్పటికే తీసేశాను!\nమరొక పెట్టెను ఎంచుకోండి")
 
-
-# Start the game over
+# Start the game    if b["text"] == " " and clicked == True:
+#         b["text"] = "X"
+#         clicked = False
+#         count += 1
+#         checkifwon()
+#     elif b["text"] == " " and clicked == False:
+#         b["text"] = "O"
+#         clicked = True
+#         count += 1
+#         checkifwon()
+#     else:
+#         messagebox.showerror("Tic Tac Toe", "క్షమించండి! ఇప్పటికే తీసేశాను!\nమరొక పెట్టెను ఎంచుకోండి") over
 def reset():
     global b1, b2, b3, b4, b5, b6, b7, b8, b9
     global clicked
     global count
     clicked = True
     count = 0
-    #Building buttons
-    b1 = Button(root, text=" ", font=("Sans Serif", 20), height=3, width=6, bg="white", command= lambda: b_click(b1))
-    b2 = Button(root, text=" ", font=("Sans Serif", 20), height=3, width=6, bg="white", command= lambda: b_click(b2))
+    # Building buttons
+    b1 = Button(root, text=" ", font=("Sans Serif", 20), height=3, width=6, bg="white", command=lambda: b_click(b1))
+    b2 = Button(root, text=" ", font=("Sans Serif", 20), height=3, width=6, bg="white", command=lambda: b_click(b2))
     b3 = Button(root, text=" ", font=("Sans Serif", 20), height=3, width=6, bg="white", command= lambda: b_click(b3))
 
     b4 = Button(root, text=" ", font=("Sans Serif", 20), height=3, width=6, bg="white", command= lambda: b_click(b4))
