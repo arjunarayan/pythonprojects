@@ -4,7 +4,7 @@ from tkinter import messagebox
 
 # Setup
 root = Tk()
-root.title('Ticcy Taccy Toeey')
+root.title('Tic Tac Toe')
 #root.geometry("1200x710")
 
 # X starts so true
