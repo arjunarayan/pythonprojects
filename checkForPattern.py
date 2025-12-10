@@ -31,4 +31,4 @@ def checkPattern(pattern: str, s:str) -> bool:
                     return False
     return True
 
-print(checkPattern("abba", "dog dog dog dog"))
+print(checkPattern("dadd", "bruh pizza bruh bruh"))
