@@ -1,5 +1,6 @@
 def findAverage(numList):
     result = 0
+    for num in numList:
 
     if len(numList) <= 0:
         return 0
