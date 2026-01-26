@@ -5,5 +5,5 @@ def findAverage(numList):
         result += num
     return result/len(numList)
 
-
-print(f"The average of the list you gave is {findAverage(numbs)}")
+numbers = [3, 7, 9, 2, 5, 10]
+print(f"The average of {numbers} is {findAverage(numbers)}")
