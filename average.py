@@ -1,7 +1,3 @@
-nums = [3, 7, 8, 11, 19]
-numbs = []
-
-
 def findAverage(numList):
     result = 0
 
