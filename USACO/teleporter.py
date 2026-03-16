@@ -47,5 +47,7 @@ def teleport():
 
     ans = min(distance_one, distance_two, distance_without_teleporter)
 
+    #writing the output to the file
+    print(ans, file=open("teleporter.out", "w"))
 
 print(teleport(3, 10, 8, 2))
