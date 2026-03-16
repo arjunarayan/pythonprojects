@@ -31,7 +31,16 @@ Problem credits: Brian Dean
 
 
 
-def teleport(a, b, x, y):
+def teleport():
+    # opening a file that contains input numbers
+    file_in = open("teleporter.in")
+
+    #reading the data in the input file
+    data = file_in.read().strip().split("\n")
+    
+    #splitting the data, converting to int, assigning it to variables
+    a, b, x, y = map(int, data[0].split(" "))
+
     distance_without_teleporter = abs(a-b)
     distance_one = abs(a-y) + abs(b-x)
     distance_two = abs(a-x) + abs(b-y)
