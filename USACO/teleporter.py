@@ -44,7 +44,6 @@ def teleport():
     distance_without_teleporter = abs(a-b)
     distance_one = abs(a-y) + abs(b-x)
     distance_two = abs(a-x) + abs(b-y)
-    return min(distance_one, distance_two, distance_without_teleporter)
 
 
 
