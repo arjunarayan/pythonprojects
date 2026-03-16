@@ -50,4 +50,4 @@ def teleport():
     #writing the output to the file
     print(ans, file=open("teleporter.out", "w"))
 
-print(teleport(3, 10, 8, 2))
+teleport()
