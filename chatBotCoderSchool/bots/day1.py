@@ -1,45 +1,53 @@
 import json
 import os
-from os import name
 
-print("🐘Booting Elephant Bot...")
+print("🐘 Booting Elephant Bot...")
 
 profile_file = "user_profile.json"
 
+# --- 1. Load Memory if it exists ---
 if os.path.exists(profile_file):
     with open(profile_file, "r") as file:
         user_profile = json.load(file)
-    print(f"Bot: Welcome back, {user_profile["name"]} I remember your favorite color"
-          f"is {user_profile["color"]}")
+    print(f"Bot: Welcome back, {user_profile['name']}! I remember your favorite color is {user_profile['color']}.")
 else:
+    # If it's a new user, create an empty profile
     user_profile = {"name": None, "color": None}
-    print("Bot: Hello! I don't think we have met. Although the only way I will know about you is a json file.")
-while 1==1:
-    user_input = input("You: ")
+    print("Bot: Hello stranger! I don't think we have met.")
 
-    if user_input == "Goodbye!":
+# --- 2. Main Chat Loop ---
+while True:
+    user_input = input("You: ").strip().lower()
+    # --- check if the user enters "quit". if they do, break the loop.
+    if user_input == "quit":
         print("Bot: Goodbye! I will remember you next time.")
         break
+    # --- check if user gives his/her name
     elif "my name is" in user_input:
+        # Extract the name from the sentence
         name = user_input.replace("my name is", "").strip().capitalize()
         user_profile["name"] = name
 
+        # Save to the hard drive immediately
         with open(profile_file, "w") as file:
             json.dump(user_profile, file, indent=4)
 
-        print(f"Bot: Nice to meet you, {name}! I have told Mr. JSON all about it.")
+        print(f"Bot: Nice to meet you, {name}! I have saved that to my hard drive.")
+
     elif "my favorite color is" in user_input:
-        color = user_input.replace("my favorite color is", "").strip().capitalize()
+        color = user_input.replace("my favorite color is", "").strip()
         user_profile["color"] = color
 
         with open(profile_file, "w") as file:
             json.dump(user_profile, file, indent=4)
 
-        print(f"Bot: {color.capitalize()} is a great color! I have told Mr. JSON all about it.")
-    elif user_input == "who am i":
-        if user_profile["name"] is not None:
-            print(f"Bot: I'm surprised you don't your own name but it's {str(user_profile[name])}")
+        print(f"Bot: {color.capitalize()} is a great color. Memory updated!")
+
+    elif user_input == "who am i?":
+        if user_profile["name"]:
+            print(f"Bot: You are {user_profile['name']}!")
         else:
-            print(f"I can't tell you your name if you never told me! And anyway, you should know your own name!!!")
+            print("Bot: I don't know yet! Tell me 'my name is [your name]'.")
+
     else:
-        print("Tell me name or favorite color")
+        print("Bot: Try telling me your name or your favorite color!")
